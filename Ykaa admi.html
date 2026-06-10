@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        /* Un petit style pour voir les résultats */
+        .table-row { display: flex; gap: 20px; border-bottom: 1px solid #ccc; padding: 10px; }
+        .badge { padding: 5px; background: #eee; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Tableau de bord</h1>
+    
+    <p>Chambres occupées : <strong id="stat-occupied">0</strong></p>
+
+    <div id="reservations-filled">
+        Chargement des réservations...
+    </div>
+
+    <script>
+        async function loadDashboardData() {
+            try {
+                const response = await fetch('http://localhost/api_hotel/get_admin_dashboard.php');
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    // 1. Mise à jour du compteur
+                    const occupiedEl = document.getElementById('stat-occupied');
+                    if (occupiedEl) occupiedEl.textContent = data.stats.occupied_rooms;
+
+                    // 2. Remplissage du tableau
+                    const tableContainer = document.getElementById('reservations-filled');
+                    if (tableContainer && data.reservations.length > 0) {
+                        tableContainer.innerHTML = data.reservations.map(res => `
+                            <div class="table-row">
+                                <span class="ref-id">${res.ref}</span>
+                                <span>${res.delegue}</span>
+                                <span>${res.chambre}</span>
+                                <span>${res.date}</span>
+                                <span><span class="badge">${res.statut}</span></span>
+                            </div>
+                        `).join('');
+                    } else {
+                        tableContainer.innerHTML = "Aucune réservation trouvée.";
+                    }
+                }
+            } catch (error) {
+                console.error("Erreur lors du chargement :", error);
+                document.getElementById('reservations-filled').innerHTML = "Erreur de connexion.";
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', loadDashboardData);
+    </script>
+</body>
+</html>

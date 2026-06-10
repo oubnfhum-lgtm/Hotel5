@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Hôtel Parlementaire — Hôtel de Prestige à Yamoussoukro</title>
+    <meta name="robots" content="max-image-preview:large" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="image/MonLogo.jpg" />
+  </head>
+
+  <body class="page-accueil corps hfeed">
+    <div class="arriere-plan-entete"></div>
+
+    <!-- ========== EN-TÊTE PRINCIPAL ========== -->
+    <header class="entete" id="entete">
+      <div class="entete__logo-enveloppe">
+        <img
+          src="image/MonLogo_Nero_AI_Background_Remover_transparent.png"
+          alt="Logo Hôtel Parlementaire"
+          class="entete__logo entete__logo--defaut"
+        />
+        <img
+          src="image/MonLogo_Nero_AI_Background_Remover_transparent.png"
+          alt="Logo Hôtel Parlementaire"
+          class="entete__logo entete__logo--actif"
+        />
+      </div>
+
+      <nav class="navigation">
+        <a
+          href="#accueil"
+          class="navigation__lien navigation__lien--actif"
+          data-id="accueil"
+          >Accueil</a
+        >
+        <a href="#apropos" class="navigation__lien" data-id="apropos"
+          >À propos</a
+        >
+        <a href="#offres" class="navigation__lien" data-id="offres"
+          >Nos offres</a
+        >
+        <a
+          href="http://localhost:5173/"
+          class="navigation__lien"
+          data-id="reservation"
+          >Réservation</a
+        >
+      </nav>
+
+      <a
+        href="https://wa.me/22564078851?text=Bonjour,%20je%20souhaite%20faire%20une%20réservation%20à%20l'Hôtel%20Parlementaire"
+        class="bouton bouton--transparent"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="bouton__texte">Contact</span>
+        <div class="bouton__icone">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.84067 0.0135162C6.23837 -0.0347938 6.64112 0.0471575 6.98838 0.247195C7.33277 0.445695 7.60377 0.749622 7.76203 1.11416L7.76301 1.11613L10.3157 6.80003L10.3196 6.80788L10.3235 6.81672C10.4452 7.09871 10.4947 7.40714 10.4678 7.71314C10.4465 7.95481 10.3757 8.18823 10.2646 8.4024L10.0378 8.73426L7.64814 11.5767L7.56273 11.6788L7.62261 11.7976C8.53285 13.5983 10.418 15.4683 12.2419 16.3799L12.3617 16.4398L12.4628 16.3534L15.3395 13.9027L15.3405 13.9017C15.3697 13.8769 15.3989 13.8554 15.4278 13.8369L15.4288 13.8359C15.6842 13.6684 15.9782 13.5663 16.283 13.5394C16.5896 13.5125 16.8989 13.5625 17.1813 13.6847L17.1882 13.6877L22.8836 16.2375L22.8855 16.2385C23.2514 16.3976 23.5573 16.6705 23.7554 17.0161C23.9528 17.3608 24.0339 17.7604 23.9871 18.1551L23.9861 18.1619V18.1649C23.7727 19.7819 22.978 21.2656 21.7506 22.3397C20.5232 23.4137 18.9468 24.0031 17.3158 24C8.06277 23.9998 0.482674 16.7077 0.0215994 7.56685L0.00490895 7.12993L0 6.68417L0.00589074 6.37882C0.072034 4.85735 0.6536 3.39988 1.66021 2.24918C2.73163 1.0246 4.21163 0.23019 5.82398 0.0144981H5.8279L5.84067 0.0135162Z"
+              fill="#412F20"
+            />
+          </svg>
+        </div>
+      </a>
+
+      <!-- Bouton menu burger -->
+      <button class="bouton-menu" id="bouton-menu" aria-label="Ouvrir le menu">
+        <svg
+          width="28"
+          height="22"
+          viewBox="0 0 28 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="bouton-menu__icone bouton-menu__icone--defaut"
+        >
+          <rect width="28" height="2" rx="1" fill="white" />
+          <rect y="10" width="28" height="2" rx="1" fill="white" />
+          <rect y="20" width="28" height="2" rx="1" fill="white" />
+        </svg>
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="bouton-menu__icone bouton-menu__icone--actif"
+        >
+          <rect
+            x="0.393555"
+            y="20.1924"
+            width="28"
+            height="2"
+            rx="1"
+            transform="rotate(-45 0.393555 20.1924)"
+            fill="#412F20"
+          />
+          <rect
+            width="28"
+            height="2"
+            rx="1"
+            transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 21.6064 20.1924)"
+            fill="#412F20"
+          />
+        </svg>
+      </button>
+    </header>
+
+    <!-- ========== MENU MOBILE ========== -->
+    <div class="menu-mobile menu-mobile--ferme" id="menu-mobile">
+      <nav class="menu-mobile__navigation">
+        <a
+          href="#accueil"
+          class="menu-mobile__lien menu-mobile__lien--actif"
+          data-id="accueil"
+          >Accueil</a
+        >
+        <a href="#apropos" class="menu-mobile__lien" data-id="apropos"
+          >À propos</a
+        >
+        <a href="#offres" class="menu-mobile__lien" data-id="offres"
+          >Nos offres</a
+        >
+        <a
+          href="http://localhost:5173/"
+          class="menu-mobile__lien"
+          data-id="reservation"
+          >Réservation</a
+        >
+      </nav>
+
+      <a
+        href="https://wa.me/22564078851?text=Bonjour,%20je%20souhaite%20faire%20une%20réservation%20à%20l'Hôtel%20Parlementaire"
+        class="bouton bouton--blanc"
+      >
+        <span class="bouton__texte">Contactez-nous</span>
+        <div class="bouton__icone">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.84067 0.0135162C6.23837 -0.0347938 6.64112 0.0471575 6.98838 0.247195C7.33277 0.445695 7.60377 0.749622 7.76203 1.11416L7.76301 1.11613L10.3157 6.80003L10.3196 6.80788L10.3235 6.81672C10.4452 7.09871 10.4947 7.40714 10.4678 7.71314C10.4465 7.95481 10.3757 8.18823 10.2646 8.4024L10.0378 8.73426L7.64814 11.5767L7.56273 11.6788L7.62261 11.7976C8.53285 13.5983 10.418 15.4683 12.2419 16.3799L12.3617 16.4398L12.4628 16.3534L15.3395 13.9027L15.3405 13.9017C15.3697 13.8769 15.3989 13.8554 15.4278 13.8369L15.4288 13.8359C15.6842 13.6684 15.9782 13.5663 16.283 13.5394C16.5896 13.5125 16.8989 13.5625 17.1813 13.6847L17.1882 13.6877L22.8836 16.2375L22.8855 16.2385C23.2514 16.3976 23.5573 16.6705 23.7554 17.0161C23.9528 17.3608 24.0339 17.7604 23.9871 18.1551L23.9861 18.1619V18.1649C23.7727 19.7819 22.978 21.2656 21.7506 22.3397C20.5232 23.4137 18.9468 24.0031 17.3158 24C8.06277 23.9998 0.482674 16.7077 0.0215994 7.56685L0.00490895 7.12993L0 6.68417L0.00589074 6.37882C0.072034 4.85735 0.6536 3.39988 1.66021 2.24918C2.73163 1.0246 4.21163 0.23019 5.82398 0.0144981H5.8279L5.84067 0.0135162Z"
+              fill="#412F20"
+            />
+          </svg>
+        </div>
+      </a>
+    </div>
+
+    <main>
+      <!-- ========== SECTION HÉRO / ACCUEIL ========== -->
+      <section class="hero" id="accueil">
+        <video autoplay loop muted playsinline class="hero__video">
+          <source
+            src="video/HOTEL PARLEMENTAIRE - UN LIEU CHARGÉ DHISTOIRE, SUBLIMÉ PAR LE TEMPS..._1.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        <div class="conteneur">
+          <div class="hero__contenu">
+            <span class="texte-principal">
+              Bienvenue à <br /><b>L'Hôtel Parlementaire</b><br />votre demeure
+              d'exception<br /><b>à Yamoussoukro</b>
+            </span>
+            <a href="http://localhost:5173/" class="bouton">
+              <span class="bouton__texte">Réserver maintenant !</span>
+              <div class="bouton__icone">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 5V19M19 5H5M19 5L5 19"
+                    stroke="#412F20"
+                    stroke-width="1.5"
+                  />
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a href="#apropos" class="hero__defilement">
+          <svg
+            width="68"
+            height="68"
+            viewBox="0 0 68 68"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g data-figma-bg-blur-radius="50">
+              <rect
+                x="0.5"
+                y="0.5"
+                width="67"
+                height="67"
+                rx="33.5"
+                fill="white"
+                fill-opacity="0.01"
+              />
+              <rect
+                x="0.5"
+                y="0.5"
+                width="67"
+                height="67"
+                rx="33.5"
+                stroke="white"
+              />
+            </g>
+            <path
+              d="M34.1005 43.2622L24.201 33.3627M34.1005 43.2622L44 33.3627M34.1005 43.2622V23.4632"
+              stroke="white"
+              stroke-width="1.5"
+            />
+          </svg>
+        </a>
+      </section>
+
+      <!-- ========== SECTION À PROPOS ========== -->
+      <section class="apropos" id="apropos">
+        <img
+          src="https://dunayimex.com.ua/wp-content/uploads/2025/10/about-frame-1.svg"
+          alt=""
+          class="apropos__cadre-haut"
+        />
+        <img
+          src="https://dunayimex.com.ua/wp-content/uploads/2025/10/about-frame-1-mobile.svg"
+          alt=""
+          class="apropos__cadre-haut-mobile"
+        />
+
+        <div class="apropos__conteneur conteneur">
+          <div class="bloc-titre">
+            <div class="bloc-titre__colonne-gauche">
+              <h3 class="sur-titre leger majuscule">À propos de nous</h3>
+              <br />
+              <h1>HÔTEL PARLEMENTAIRE</h1>
+              <br />
+              <h3 class="ombre">
+                L'Hôtel Parlementaire est un établissement de prestige niché au
+                cœur de Yamoussoukro, la capitale politique de la Côte d'Ivoire.
+                Fondé dans les années 1980 pour accueillir les dignitaires,
+                diplomates et parlementaires du monde entier, il perpétue depuis
+                lors une tradition d'excellence et d'hospitalité raffinée. Ses
+                80 chambres et suites somptueusement décorées, ses salles de
+                conférence à la pointe de la technologie et sa table
+                gastronomique en font l'adresse incontournable pour un séjour
+                d'affaires ou de loisirs à Yamoussoukro. La famille
+                Parlementaire vous souhaite la bienvenue.
+              </h3>
+              <img
+                src="image/Luxury isn't a luxury anymore, it's a necessity ,_Transform your reception area into a stunning first impression_ __Call us today for a quote!.jpg"
+                alt="Hall de réception luxueux"
+                class="bloc-titre__image bloc-titre__image--mobile"
+              />
+            </div>
+            <div class="bloc-titre__colonne-droite"></div>
+          </div>
+
+          <!-- commentaires clients -->
+          <div class="temoignages">
+            <h2 class="temoignages__titre">
+              <span class="leger">Quelques </span>avis <b>de nos clients :</b>
+            </h2>
+
+            <div class="temoignages__liste">
+              <!-- avis 1 -->
+              <div class="temoignage__carte">
+                <div class="temoignage__en-tete">
+                  <svg
+                    width="20"
+                    height="25"
+                    viewBox="0 0 20 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="temoignage__icone"
+                  >
+                    <path
+                      d="M10 2.5l2.8 5.7 6.3.9-4.6 4.5 1.1 6.4-5.6-3-5.6 3 1.1-6.4-4.6-4.5 6.3-.9L10 2.5Z"
+                      fill="#FCB116"
+                    />
+                  </svg>
+                  <h3 class="gras">
+                    Un cadre majestueux, un service irréprochable
+                  </h3>
+                </div>
+                <p class="ombre">
+                  L'Hôtel Parlementaire m'a impressionné dès le premier regard.
+                  <b
+                    >Le personnel est attentionné et les chambres dépassent
+                    toutes mes attentes.</b
+                  >
+                </p>
+              </div>
+
+              <!-- avis 2  -->
+              <div class="temoignage__carte">
+                <div class="temoignage__en-tete">
+                  <svg
+                    width="20"
+                    height="25"
+                    viewBox="0 0 20 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="temoignage__icone"
+                  >
+                    <path
+                      d="M10 2.5l2.8 5.7 6.3.9-4.6 4.5 1.1 6.4-5.6-3-5.6 3 1.1-6.4-4.6-4.5 6.3-.9L10 2.5Z"
+                      fill="#FCB116"
+                    />
+                  </svg>
+                  <h3 class="gras">La référence hôtelière de Yamoussoukro</h3>
+                </div>
+                <p class="ombre">
+                  Pour mes déplacements professionnels à Yamoussoukro, je ne
+                  choisis que le Parlementaire.
+                  <b>Les salles de réunion sont parfaitement équipées</b> et la
+                  connexion internet est excellente.
+                </p>
+              </div>
+
+              <!-- avis 3 -->
+              <div class="temoignage__carte">
+                <div class="temoignage__en-tete">
+                  <svg
+                    width="20"
+                    height="25"
+                    viewBox="0 0 20 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="temoignage__icone"
+                  >
+                    <path
+                      d="M10 2.5l2.8 5.7 6.3.9-4.6 4.5 1.1 6.4-5.6-3-5.6 3 1.1-6.4-4.6-4.5 6.3-.9L10 2.5Z"
+                      fill="#FCB116"
+                    />
+                  </svg>
+                  <h3 class="gras">Un séjour inoubliable en famille</h3>
+                </div>
+                <p class="ombre">
+                  Nous avons célébré notre anniversaire de mariage au
+                  Parlementaire.
+                  <b>Le buffet du petit-déjeuner est varié et copieux.</b>
+                  Nous reviendrons sans hésiter !
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION RESTAURATION ========== -->
+      <section class="restauration" id="restauration">
+        <div class="conteneur">
+          <div class="rubrique-titre">
+            <h3 class="sur-titre leger majuscule">Restauration</h3>
+            <h1 class="rubrique-titre__bas">Une gastronomie d'exception</h1>
+          </div>
+
+          <div class="restauration__grille">
+            <div class="restauration__service">
+              <img
+                src="https://dunayimex.com.ua/wp-content/uploads/2025/10/Union.svg"
+                alt=""
+                class="restauration__demi-cercle"
+              />
+              <img
+                src="icone/cuisine.png"
+                alt=""
+                class="restauration__icone-service"
+              />
+              <br /><br />
+              <div class="restauration__texte">
+                <h3 class="gras">Cuisine Ivoirienne & Internationale</h3>
+              </div>
+            </div>
+
+            <div class="restauration__service">
+              <img
+                src="https://dunayimex.com.ua/wp-content/uploads/2025/10/Union.svg"
+                alt=""
+                class="restauration__demi-cercle"
+              />
+              <img
+                src="icone/restaurant.png"
+                alt=""
+                class="restauration__icone-service"
+              />
+              <br /><br />
+              <div class="restauration__texte">
+                <h3 class="gras">Restaurant Panoramique Le Bélier</h3>
+              </div>
+            </div>
+
+            <div class="restauration__service">
+              <img
+                src="https://dunayimex.com.ua/wp-content/uploads/2025/10/Union.svg"
+                alt=""
+                class="restauration__demi-cercle"
+              />
+              <img
+                src="icone/chef.png"
+                alt=""
+                class="restauration__icone-service"
+              />
+              <br /><br />
+              <div class="restauration__texte">
+                <h3 class="gras">Chef Étoilé aux Commandes</h3>
+              </div>
+            </div>
+
+            <div class="restauration__service">
+              <img
+                src="https://dunayimex.com.ua/wp-content/uploads/2025/10/Union.svg"
+                alt=""
+                class="restauration__demi-cercle"
+              />
+              <img
+                src="icone/desinfectant.png"
+                alt=""
+                class="restauration__icone-service"
+              />
+              <br /><br />
+              <div class="restauration__texte">
+                <h3 class="gras">Hygiène & Normes Internationales</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <img
+          src="https://dunayimex.com.ua/wp-content/uploads/2025/10/frame-2.svg"
+          alt=""
+          class="restauration__cadre-bas"
+        />
+        <img
+          src="https://dunayimex.com.ua/wp-content/uploads/2025/10/frame-2-mobile.svg"
+          alt=""
+          class="restauration__cadre-bas restauration__cadre-bas--mobile"
+        />
+      </section>
+
+      <!-- ========== SECTION NOS OFFRES ========== -->
+      <section class="catalogue-offres" id="offres">
+        <div class="conteneur">
+          <div class="catalogue-offres__en-tete">
+            <h1>Nos offres</h1>
+          </div>
+
+          <div class="catalogue-offres__barre">
+            <div class="filtres">
+              <div class="filtres__titre">
+                <svg
+                  width="295"
+                  height="12"
+                  viewBox="0 0 295 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="filtres__trait"
+                >
+                  <path
+                    d="M295 1H28.0357C19.2594 1 10.7147 3.81615 3.65821 9.0343L1 11"
+                    stroke="white"
+                  />
+                </svg>
+                <h3 class="leger majuscule">Tous</h3>
+                <svg
+                  width="295"
+                  height="12"
+                  viewBox="0 0 295 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="filtres__trait"
+                >
+                  <path
+                    d="M-1.24574e-05 1H266.964C275.741 1 284.285 3.81615 291.342 9.0343L294 11"
+                    stroke="white"
+                  />
+                </svg>
+              </div>
+
+              <div class="filtres__liste" id="filtres-offres">
+                <button
+                  class="filtre-bouton filtre-bouton--actif"
+                  data-filtre="tout"
+                >
+                  <h3>Toutes nos offres</h3>
+                </button>
+                <button class="filtre-bouton" data-filtre="chambre">
+                  <h3>Chambres</h3>
+                </button>
+                <button class="filtre-bouton" data-filtre="affaires">
+                  <h3>Affaires</h3>
+                </button>
+                <button class="filtre-bouton" data-filtre="evenement">
+                  <h3>Salles d'événement</h3>
+                </button>
+              </div>
+            </div>
+
+            <a href="http://localhost:5173/">
+              <button class="bouton bouton--dore bouton--compact">
+                <span class="bouton__texte"><h3>Réserver maintenant</h3></span>
+              </button>
+            </a>
+          </div>
+
+          <div class="grille-offres" id="grille-offres">
+            <!-- Offre 01 -->
+            <div
+              class="carte-offre"
+              data-categorie="chambre"
+              data-id="offre-01"
+            >
+              <img
+                src="image/Hotel Nikko San Francisco — Hotel Review _ Condé Nast Traveler.jpg"
+                alt="Chambre étoile"
+                class="carte-offre__photo"
+              />
+              <div class="carte-offre__details">
+                <h2>01. Chambre Étoile</h2>
+                <ul class="carte-offre__specs">
+                  <li>Classe premium</li>
+                  <li>Prix : <b>50 000 FCFA / nuit</b></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Offre 02 -->
+            <div
+              class="carte-offre"
+              data-categorie="chambre"
+              data-id="offre-02"
+            >
+              <img
+                src="image/télécharger (22).jpg"
+                alt="Chambre couple"
+                class="carte-offre__photo"
+              />
+              <div class="carte-offre__details">
+                <h2>02. Chambre Couple</h2>
+                <ul class="carte-offre__specs">
+                  <li>Classe premium</li>
+                  <li>Prix : <b>30 000 FCFA / nuit</b></li>
+                </ul>
+              </div>
+              <button class="carte-offre__badge-promo" data-ouvrir="offre-02">
+                <span class="carte-offre__badge-texte">Offre spéciale</span>
+              </button>
+            </div>
+
+            <!-- Offre 03 -->
+            <div
+              class="carte-offre"
+              data-categorie="evenement"
+              data-id="offre-03"
+            >
+              <img
+                src="image/Modern Luxury Reception Area.jpg"
+                alt="Salle de réception"
+                class="carte-offre__photo"
+              />
+              <div class="carte-offre__details">
+                <h2>03. Salle de Réception</h2>
+                <ul class="carte-offre__specs">
+                  <li>Capacité : <b>100 personnes max</b></li>
+                  <li>Prix : <b>200 000 FCFA / 2 heures</b></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Offre 04 -->
+            <div
+              class="carte-offre"
+              data-categorie="affaires"
+              data-id="offre-04"
+            >
+              <img
+                src="image/Hotel Presidency Cochin.jpg"
+                alt="Espace affaires"
+                class="carte-offre__photo"
+              />
+              <div class="carte-offre__details">
+                <h2>04. Home Business</h2>
+                <ul class="carte-offre__specs">
+                  <li>Salle d'affaires : <b>20 personnes max</b></li>
+                  <li>Prix : <b>300 000 FCFA / 3 heures</b></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Offre 05 -->
+            <div
+              class="carte-offre"
+              data-categorie="affaires"
+              data-id="offre-05"
+            >
+              <img
+                src="image/1c482de0fe082abbd0f78072f377c23e.jpg"
+                alt="Salle de réunion"
+                class="carte-offre__photo"
+              />
+              <div class="carte-offre__details">
+                <h2>05. Salle de Réunion</h2>
+                <ul class="carte-offre__specs">
+                  <li>Réunion : <b>18 personnes max</b></li>
+                  <li>Prix : <b>100 000 FCFA</b></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Offre 06 -->
+            <div
+              class="carte-offre"
+              data-categorie="chambre"
+              data-id="offre-06"
+            >
+              <img
+                src="image/68401c899d6e3b1afa965080f1793236.jpg"
+                alt="Chambre standard"
+                class="carte-offre__photo"
+              />
+              <div class="carte-offre__details">
+                <h2>06. Chambre Standard</h2>
+                <ul class="carte-offre__specs">
+                  <li>Classe économique</li>
+                  <li>Prix : <b>25 000 FCFA / nuit</b></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Offre 07 -->
+            <div
+              class="carte-offre"
+              data-categorie="chambre"
+              data-id="offre-07"
+            >
+              <img
+                src="image/6c886a58955b62b80b29d29a69432904.jpg"
+                alt="Chambre famille"
+                class="carte-offre__photo"
+              />
+              <div class="carte-offre__details">
+                <h2>07. Chambre Famille</h2>
+                <ul class="carte-offre__specs">
+                  <li>Classe économique</li>
+                  <li>Prix : <b>35 000 FCFA / nuit</b></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Offre 08 -->
+            <div
+              class="carte-offre"
+              data-categorie="chambre"
+              data-id="offre-08"
+            >
+              <img
+                src="image/8b9dc228c637b55b1b5efba4ec54f9db.jpg"
+                alt="Chambre deluxe"
+                class="carte-offre__photo"
+              />
+              <div class="carte-offre__details">
+                <h2>08. Chambre Deluxe</h2>
+                <ul class="carte-offre__specs">
+                  <li>Classe supérieure</li>
+                  <li>Prix : <b>50 000 FCFA / nuit</b></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Offre 09 -->
+            <div
+              class="carte-offre"
+              data-categorie="chambre"
+              data-id="offre-09"
+            >
+              <img
+                src="image/9258843b72f5b8e729724709f30dc3bf.jpg"
+                alt="Suite"
+                class="carte-offre__photo"
+              />
+              <div class="carte-offre__details">
+                <h2>09. Suite Prestige</h2>
+                <ul class="carte-offre__specs">
+                  <li>Classe luxe</li>
+                  <li>Prix : <b>50 000 FCFA / nuit</b></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Offre 10 -->
+            <div
+              class="carte-offre"
+              data-categorie="affaires"
+              data-id="offre-10"
+            >
+              <img
+                src="image/9e32a3f94014a391a6d21e3e8dbcac61.jpg"
+                alt="Espace affaires premium"
+                class="carte-offre__photo"
+              />
+              <div class="carte-offre__details">
+                <h2>10. Home Business Plus</h2>
+                <ul class="carte-offre__specs">
+                  <li>Salle d'affaires : <b>15 personnes max</b></li>
+                  <li>Prix : <b>200 000 FCFA / 2 heures</b></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Offre 11 -->
+            <div
+              class="carte-offre"
+              data-categorie="evenement"
+              data-id="offre-11"
+            >
+              <img
+                src="image/a2dccac4cc6fb8d2176a2cacb707ab24.jpg"
+                alt="Hall de réception étoile"
+                class="carte-offre__photo"
+              />
+              <div class="carte-offre__details">
+                <h2>11. Hall de Réception Étoile</h2>
+                <ul class="carte-offre__specs">
+                  <li>Classe : <b>Étoile</b></li>
+                  <li>Prix : <b>250 000 FCFA +</b></li>
+                </ul>
+              </div>
+              <button class="carte-offre__badge-promo" data-ouvrir="offre-11">
+                <span class="carte-offre__badge-texte">Offre</span>
+              </button>
+            </div>
+
+            <!-- Offre 12 -->
+            <div
+              class="carte-offre"
+              data-categorie="evenement"
+              data-id="offre-12"
+            >
+              <img
+                src="image/f5a694b40052428f10a2fc8c60282a04.jpg"
+                alt="Salle de mariage"
+                class="carte-offre__photo"
+              />
+              <div class="carte-offre__details">
+                <h2>12. Salle Mariage & Baptême</h2>
+                <ul class="carte-offre__specs">
+                  <li>Capacité : <b>200 personnes max</b></li>
+                  <li>Prix : <b>500 000 FCFA / 8h</b></li>
+                </ul>
+              </div>
+              <button class="carte-offre__badge-promo" data-ouvrir="offre-12">
+                <span class="carte-offre__badge-texte">Offre spéciale</span>
+              </button>
+            </div>
+
+            <!-- Offre 13 -->
+            <div
+              class="carte-offre"
+              data-categorie="evenement"
+              data-id="offre-13"
+            >
+              <img
+                src="image/Hosting a business or corporate event.jpeg"
+                alt="Salle de conférence"
+                class="carte-offre__photo"
+              />
+              <div class="carte-offre__details">
+                <h2>13. Salle Conférence</h2>
+                <ul class="carte-offre__specs">
+                  <li>Capacité : <b>200 personnes max</b></li>
+                  <li>Prix : <b>200 000 FCFA / 8h</b></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Offre 14 -->
+            <div
+              class="carte-offre"
+              data-categorie="affaires"
+              data-id="offre-14"
+            >
+              <img
+                src="image 2/28921622602529992.jpg"
+                alt="Salle de réunion alternative"
+                class="carte-offre__photo"
+              />
+              <div class="carte-offre__details">
+                <h2>14. Salle de réunion</h2>
+                <ul class="carte-offre__specs">
+                  <li>Capacité : <b>20 personnes max</b></li>
+                  <li>Prix : <b>70 000 FCFA / 3h</b></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Offre 15 -->
+            <div
+              class="carte-offre"
+              data-categorie="affaires"
+              data-id="offre-15"
+            >
+              <img
+                src="image 2/460422761925140775.jpg"
+                alt="Salon privé"
+                class="carte-offre__photo"
+              />
+              <div class="carte-offre__details">
+                <h2>15. Salon</h2>
+                <ul class="carte-offre__specs">
+                  <li>Capacité : <b>5 personnes max</b></li>
+                  <li>Prix : <b>250 000 FCFA / 3h</b></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Bouton réserver en bas de grille -->
+            <a href="reservation.html" style="display: contents">
+              <button class="catalogue-offres__bouton-reserver" type="button">
+                <h3>Réserver</h3>
+                <svg
+                  viewBox="0 0 22 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="catalogue-offres__fleche"
+                >
+                  <path
+                    d="M21 1V21M21 1H1M21 1L1 21"
+                    stroke="white"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== PIED DE PAGE ========== -->
+      <footer class="pied-de-page">
+        <img
+          src="https://dunayimex.com.ua/wp-content/uploads/2025/10/frame-top-1.svg"
+          alt=""
+          class="pied-de-page__cadre"
+        />
+        <img
+          src="https://dunayimex.com.ua/wp-content/uploads/2025/10/frame-top-mobile.svg"
+          alt=""
+          class="pied-de-page__cadre pied-de-page__cadre--mobile"
+        />
+
+        <div class="conteneur">
+          <a href="#accueil" class="pied-de-page__logo">
+            <img
+              src="image/MonLogo_Nero_AI_Background_Remover_transparent.png"
+              alt="Logo Hôtel Parlementaire"
+              class="pied-de-page__logo-image"
+            />
+          </a>
+
+          <nav class="pied-de-page__navigation">
+            <a
+              href="#accueil"
+              class="menu-mobile__lien menu-mobile__lien--actif"
+              data-id="accueil"
+              >Accueil</a
+            >
+            <a href="#apropos" class="menu-mobile__lien" data-id="apropos"
+              >À propos</a
+            >
+            <a href="#offres" class="menu-mobile__lien" data-id="offres"
+              >Nos offres</a
+            >
+            <a
+              href="reservation.html"
+              class="menu-mobile__lien"
+              data-id="reservation"
+              >Réservation</a
+            >
+          </nav>
+
+          <a
+            href="https://wa.me/22564078851?text=Bonjour,%20je%20souhaite%20faire%20une%20réservation%20à%20l'Hôtel%20Parlementaire"
+            class="bouton bouton--blanc"
+          >
+            <span class="bouton__texte">Contact</span>
+            <div class="bouton__icone">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.84067 0.0135162C6.23837 -0.0347938 6.64112 0.0471575 6.98838 0.247195C7.33277 0.445695 7.60377 0.749622 7.76203 1.11416L7.76301 1.11613L10.3157 6.80003L10.3196 6.80788L10.3235 6.81672C10.4452 7.09871 10.4947 7.40714 10.4678 7.71314C10.4465 7.95481 10.3757 8.18823 10.2646 8.4024L10.0378 8.73426L7.64814 11.5767L7.56273 11.6788L7.62261 11.7976C8.53285 13.5983 10.418 15.4683 12.2419 16.3799L12.3617 16.4398L12.4628 16.3534L15.3395 13.9027L15.3405 13.9017C15.3697 13.8769 15.3989 13.8554 15.4278 13.8369L15.4288 13.8359C15.6842 13.6684 15.9782 13.5663 16.283 13.5394C16.5896 13.5125 16.8989 13.5625 17.1813 13.6847L17.1882 13.6877L22.8836 16.2375L22.8855 16.2385C23.2514 16.3976 23.5573 16.6705 23.7554 17.0161C23.9528 17.3608 24.0339 17.7604 23.9871 18.1551L23.9861 18.1619V18.1649C23.7727 19.7819 22.978 21.2656 21.7506 22.3397C20.5232 23.4137 18.9468 24.0031 17.3158 24C8.06277 23.9998 0.482674 16.7077 0.0215994 7.56685L0.00490895 7.12993L0 6.68417L0.00589074 6.37882C0.072034 4.85735 0.6536 3.39988 1.66021 2.24918C2.73163 1.0246 4.21163 0.23019 5.82398 0.0144981H5.8279L5.84067 0.0135162Z"
+                  fill="#412F20"
+                />
+              </svg>
+            </div>
+          </a>
+
+          <span class="pied-de-page__droits"
+            >© 2026 Hôtel Parlementaire — Tous droits réservés.</span
+          >
+        </div>
+      </footer>
+    </main>
+
+    <script defer src="script.js"></script>
+  </body>
+</html>
