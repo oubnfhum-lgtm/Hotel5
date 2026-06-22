@@ -10,8 +10,8 @@
       rel="stylesheet"
     />
     <title>Hôtel Parlementaire — Hôtel de Prestige à Yamoussoukro</title>
-    <meta name="robots" content="max-image-preview:large" />
     <link rel="stylesheet" href="style.css" />
+    <meta name="robots" content="max-image-preview:large" />
     <link rel="icon" type="image/png" href="image/MonLogo.jpg" />
   </head>
 
@@ -22,7 +22,7 @@
     <header class="entete" id="entete">
       <div class="entete__logo-enveloppe">
         <img
-          src="image/MonLogo_Nero_AI_Background_Remover_transparent.png"
+          src="image png/logo_h_tel_parlementaire_option_prestige-removebg-preview.png"
           alt="Logo Hôtel Parlementaire"
           class="entete__logo entete__logo--defaut"
         />
@@ -46,8 +46,11 @@
         <a href="#offres" class="navigation__lien" data-id="offres"
           >Nos offres</a
         >
+        <a href="#localisation" class="navigation__lien" data-id="localisation"
+          >Localisation</a
+        >
         <a
-          href="http://localhost:5173/"
+          href="http://127.0.0.1:5500/Hotel5_page_reservation/reservation.html"
           class="navigation__lien"
           data-id="reservation"
           >Réservation</a
@@ -134,8 +137,11 @@
         <a href="#offres" class="menu-mobile__lien" data-id="offres"
           >Nos offres</a
         >
+        <a href="#localisation" class="menu-mobile__lien" data-id="localisation"
+          >Localisation</a
+        >
         <a
-          href="http://localhost:5173/"
+          href="http://127.0.0.1:5500/Hotel5_page_reservation/reservation.html"
           class="menu-mobile__lien"
           data-id="reservation"
           >Réservation</a
@@ -168,19 +174,19 @@
       <!-- ========== SECTION HÉRO / ACCUEIL ========== -->
       <section class="hero" id="accueil">
         <video autoplay loop muted playsinline class="hero__video">
-          <source
-            src="video/HOTEL PARLEMENTAIRE - UN LIEU CHARGÉ DHISTOIRE, SUBLIMÉ PAR LE TEMPS..._1.mp4"
-            type="video/mp4"
-          />
+          <source src="video/Hotel ParlementaireV3.mp4" type="video/mp4" />
         </video>
 
         <div class="conteneur">
           <div class="hero__contenu">
             <span class="texte-principal">
-              Bienvenue à <br /><b>L'Hôtel Parlementaire</b><br />votre demeure
-              d'exception<br /><b>à Yamoussoukro</b>
+              Bienvenue à <b>L'Hôtel Parlementaire </b> votre demeure
+              d'exception <b>à Yamoussoukro</b>
             </span>
-            <a href="http://localhost:5173/" class="bouton">
+            <a
+              href="http://127.0.0.1:5500/Hotel5_page_reservation/reservation.html"
+              class="bouton"
+            >
               <span class="bouton__texte">Réserver maintenant !</span>
               <div class="bouton__icone">
                 <svg
@@ -269,6 +275,7 @@
                 d'affaires ou de loisirs à Yamoussoukro. La famille
                 Parlementaire vous souhaite la bienvenue.
               </h3>
+
               <img
                 src="image/Luxury isn't a luxury anymore, it's a necessity ,_Transform your reception area into a stunning first impression_ __Call us today for a quote!.jpg"
                 alt="Hall de réception luxueux"
@@ -519,9 +526,13 @@
               </div>
             </div>
 
-            <a href="http://localhost:5173/">
+            <a
+              href="http://127.0.0.1:5500/Hotel5_page_reservation/reservation.html"
+            >
               <button class="bouton bouton--dore bouton--compact">
-                <span class="bouton__texte"><h3>Réserver maintenant</h3></span>
+                <span class="bouton__texte">
+                  <h3>Réserver maintenant</h3>
+                </span>
               </button>
             </a>
           </div>
@@ -837,7 +848,10 @@
             </div>
 
             <!-- Bouton réserver en bas de grille -->
-            <a href="reservation.html" style="display: contents">
+            <a
+              href="http://127.0.0.1:5500/Hotel5_page_reservation/reservation.html"
+              style="display: contents"
+            >
               <button class="catalogue-offres__bouton-reserver" type="button">
                 <h3>Réserver</h3>
                 <svg
@@ -856,8 +870,125 @@
             </a>
           </div>
         </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <!-- séparateur DANS la section offres -->
+        <div class="catalogue-offres__separateur">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1378.129"
+            height="113.326"
+            viewBox="0 0 1378.129 113.326"
+          >
+            <path
+              id="Tracé_1"
+              data-name="Tracé 1"
+              d="M208.566,314.906H755.879l59.063-33.125h228.376l59.063,33.125h484.314V201.58H1102.38l-59.063,30.744H814.942L755.879,201.58H208.566Z"
+              transform="translate(-208.566 -201.58)"
+              fill="#261b13"
+            />
+          </svg>
+        </div>
+      </section>
+      <!-- fin catalogue-offres -->
+
+      <!-- ========== SECTION LOCALISATION ========== -->
+      <section class="localisation" id="localisation">
+        <div class="conteneur localisation__conteneur-full">
+          <div class="localisation__carte-conteneur">
+            <div class="localisation__texte">
+              <h3 class="sur-titre leger majuscule ombre">Nous trouver</h3>
+              <h1>Notre localisation</h1>
+
+              <div class="localisation__stats">
+                <div class="localisation__stat">
+                  <span class="localisation__chiffre">80+</span>
+                  <p class="ombre">
+                    Chambres & suites au<br />cœur de Yamoussoukro
+                  </p>
+                </div>
+                <div class="localisation__stat">
+                  <span class="localisation__chiffre">24/7</span>
+                  <p class="ombre">Accueil disponible<br />jour et nuit</p>
+                </div>
+              </div>
+
+              <div class="localisation__infos">
+                <div class="localisation__info">
+                  <span class="localisation__label">Adresse</span>
+                  <p>Quartier des institutions, Yamoussoukro, Côte d'Ivoire</p>
+                </div>
+                <div class="localisation__info">
+                  <span class="localisation__label">Téléphone</span>
+                  <p>+225 27 22 22 22 22</p>
+                </div>
+                <div class="localisation__info">
+                  <span class="localisation__label">À proximité</span>
+                  <p>À 10 min de la basilique et du lac municipal</p>
+                </div>
+              </div>
+
+              <h3 class="ombre">
+                L'Hôtel Parlementaire est idéalement situé à Yamoussoukro,
+                capitale politique de la Côte d'Ivoire, à proximité des
+                institutions et des principaux lieux d'intérêt de la ville.
+              </h3>
+
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Yamoussoukro,+C%C3%B4te+d%27Ivoire"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bouton bouton--dore"
+              >
+                <span class="bouton__texte">Itinéraire</span>
+                <div class="bouton__icone">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19 5V19M19 5H5M19 5L5 19"
+                      stroke="#0f0f0f"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                </div>
+              </a>
+            </div>
+
+            <div class="localisation__carte">
+              <iframe
+                src="https://www.google.com/maps?q=Yamoussoukro,+C%C3%B4te+d%27Ivoire&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Localisation de l'Hôtel Parlementaire"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </section>
 
+
+
+
+      
+
+
+      
       <!-- ========== PIED DE PAGE ========== -->
       <footer class="pied-de-page">
         <img
@@ -874,7 +1005,7 @@
         <div class="conteneur">
           <a href="#accueil" class="pied-de-page__logo">
             <img
-              src="image/MonLogo_Nero_AI_Background_Remover_transparent.png"
+              src="image png/logo_h_tel_parlementaire_option_prestige-removebg-preview.png"
               alt="Logo Hôtel Parlementaire"
               class="pied-de-page__logo-image"
             />
@@ -892,6 +1023,12 @@
             >
             <a href="#offres" class="menu-mobile__lien" data-id="offres"
               >Nos offres</a
+            >
+            <a
+              href="#localisation"
+              class="menu-mobile__lien"
+              data-id="localisation"
+              >Localisation</a
             >
             <a
               href="reservation.html"
@@ -929,6 +1066,7 @@
       </footer>
     </main>
 
-    <script defer src="script.js"></script>
+    <script defer src="offres_dynamiques.js"></script>
+    <script src="scripte.js"></script>
   </body>
 </html>

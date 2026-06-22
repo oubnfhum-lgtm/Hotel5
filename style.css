@@ -110,11 +110,6 @@ b {
   }
 }
 
-
-
-
-
-
 /* Vidéo d'arrière-plan */
 .hero__video {
   width: 100%;
@@ -135,8 +130,6 @@ b {
     transform: none !important;
   }
 }
-
-
 
 /* Contenu héro */
 .hero__contenu {
@@ -189,11 +182,6 @@ b {
   width: 100%;
   height: 100%;
 }
-
-
-
-
-
 
 /* ============================================================
    SECTION À PROPOS
@@ -274,7 +262,6 @@ b {
   transition: opacity 0.5s 0.2s ease;
 }
 
-
 /* Image mobile dans le bloc titre */
 .bloc-titre__image {
   width: 50%;
@@ -301,12 +288,6 @@ b {
     border-radius: 1.9em;
   }
 }
-
-
-
-
-
-
 
 /* ---- Témoignages clients ---- */
 .temoignages {
@@ -408,13 +389,6 @@ b {
     text-wrap: wrap;
   }
 }
-
-
-
-
-
-
-
 
 /* ============================================================
    SECTION RESTAURATION
@@ -550,22 +524,12 @@ b {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
 /* ============================================================
    SECTION CATALOGUE DES OFFRES
    ============================================================ */
 .catalogue-offres {
   background: none;
-  padding: 5em 0 11.2em;
+  padding: 5em 0 0; /* ← 0 en bas, le séparateur gère la transition */
   color: #fff;
   position: relative;
   z-index: 1;
@@ -577,7 +541,8 @@ b {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url(image\ 2/Gemini_Generated_Image_3ko2pl3ko2pl3ko2.png) no-repeat center;
+  background: url(image/Gemini_Generated_Image_3ko2pl3ko2pl3ko2.png) no-repeat
+    center;
   background-size: cover;
 
   z-index: -1;
@@ -658,7 +623,6 @@ b {
     flex-wrap: wrap;
   }
 }
-
 
 /* remplissage bouton offre chambre  */
 
@@ -801,8 +765,6 @@ b {
   }
 }
 
-
-
 /* Badge promo (petit bouton jaune en coin) */
 .carte-offre__badge-promo {
   position: absolute;
@@ -913,6 +875,44 @@ b {
 
 .bouton__texte {
   text-wrap: nowrap;
+}
+
+.localisation .bouton__texte {
+  font-size: 1.05rem;
+}
+@media screen and (max-aspect-ratio: 2/3) {
+  .localisation .bouton__texte {
+    font-size: 2.1rem;
+  }
+}
+
+.localisation .bouton__icone {
+  background-color: rgba(255, 255, 255, 0.45);
+  color: #412f20;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  min-width: 2.2rem;
+  min-height: 2.2rem;
+  padding: 0.55rem;
+  border: 0.12rem solid rgba(65, 47, 32, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.localisation .bouton__icone svg path {
+  fill: #412f20;
+}
+@media screen and (max-aspect-ratio: 2/3) {
+  .localisation .bouton__icone {
+    width: 4.8rem;
+    height: 4.8rem;
+    min-width: 4.8rem;
+    min-height: 4.8rem;
+    padding: 1.2rem;
+  }
 }
 
 .bouton__icone {
@@ -1035,16 +1035,6 @@ b {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
 /* ============================================================
    EN-TÊTE FIXE
    ============================================================ */
@@ -1098,7 +1088,7 @@ b {
 }
 @media screen and (max-aspect-ratio: 2/3) {
   .entete__logo-enveloppe {
-    width: 34.6666666667vw;
+    width: 24.6666666667vw;
     height: 16vw;
     backdrop-filter: blur(6.6666666667vw);
     -webkit-backdrop-filter: blur(6.6666666667vw);
@@ -1112,8 +1102,8 @@ b {
   left: 50%;
   transform: translate(-50%, -50%);
   object-fit: contain;
-  width: 100%;
-  height: 100%;
+  width: 150%;
+  height: 150%;
   transition: opacity 0.3s ease;
 }
 @media screen and (max-aspect-ratio: 2/3) {
@@ -1222,19 +1212,6 @@ b {
 .bouton-menu__icone--actif {
   opacity: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ============================================================
    MENU MOBILE
@@ -1398,15 +1375,148 @@ b {
   }
 }
 
+/* ============================================================
+   SECTION LOCALISATION
+   ============================================================ */
+.localisation {
+  padding: 6em 0;
+  background-color: #fdf8f3;
+  background-image: url("assets/products/bg_floue.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media screen and (max-aspect-ratio: 2/3) {
+  .localisation {
+    padding: 3em 0;
+  }
+}
 
+.localisation__carte-conteneur {
+  display: flex;
+  align-items: center;
+  gap: 4em;
+  background-color: #ffffff;
+  border-radius: 2.5em;
+  box-shadow: 0 0 5em #48382e26;
+  padding: 3.5em;
+  left: 10%;
+  right: 10%;
+  margin-left: -7vw;
+  margin-right: -7vw;
+}
+@media screen and (max-aspect-ratio: 2/3) {
+  .localisation__carte-conteneur {
+    flex-direction: column;
+    padding: 2em 1.4em;
+    gap: 2em;
+    border-radius: 1.8em;
+  }
+}
 
+.localisation__texte {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
 
+.localisation__texte h1,
+.localisation__texte h3 {
+  line-height: 1.15;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
 
+.localisation__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5em;
+  margin: 0.5em 0;
+}
+@media screen and (max-aspect-ratio: 2/3) {
+  .localisation__stats {
+    gap: 1.5em;
+  }
+}
 
+.localisation__infos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8em;
+  margin: 1.2em 0;
+}
 
+.localisation__info {
+  min-width: 12rem;
+  max-width: 18rem;
+}
 
+.localisation__label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b29074;
+  margin-bottom: 0.4em;
+}
 
+.localisation__info p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #412f20;
+}
 
+.localisation__stat {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.localisation__chiffre {
+  font-weight: 700;
+  font-size: 4vw;
+  /* CORRECTION : line-height explicite pour ne plus hériter de la
+     line-height calculée (en px/vw figés) de .corps (130% d'un
+     font-size beaucoup plus petit). Sans cette ligne, la boîte de
+     ligne était trop basse pour ce gros texte et débordait sur le
+     paragraphe suivant (.localisation__stat p) → chevauchement. */
+  line-height: 1.1;
+  color: #fcb116;
+  letter-spacing: -0.03em;
+}
+@media screen and (max-aspect-ratio: 2/3) {
+  .localisation__chiffre {
+    font-size: 9vw;
+    /* CORRECTION : même fix côté mobile, le font-size y est encore
+       plus grand donc le risque de chevauchement est encore plus
+       élevé sans line-height explicite. */
+    line-height: 1.1;
+  }
+}
+
+.localisation__carte {
+  flex: 1.2;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 1.8em;
+  overflow: hidden;
+}
+@media screen and (max-aspect-ratio: 2/3) {
+  .localisation__carte {
+    aspect-ratio: 1/1;
+  }
+}
+.localisation__carte iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
 
 /* ============================================================
    UTILITAIRES GLOBAUX
@@ -1513,5 +1623,28 @@ input[type="submit"] {
   color: inherit;
 }
 
+.catalogue-offres__separateur {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent; /* l'image des offres passe derrière */
+}
 
+.catalogue-offres__separateur {
+  position: absolute;
+  bottom: -56px; /* moitié de la hauteur du SVG (113/2 ≈ 56) */
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  font-size: 0;
+  z-index: 5;
+}
 
+.catalogue-offres__separateur svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}

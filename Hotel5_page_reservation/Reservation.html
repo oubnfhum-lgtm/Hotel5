@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+  <title>Réservation — Hôtel Parlementaire</title>
+  <link rel="stylesheet" href="Reservation.css" />
+  <link rel="icon" type="image/png" href="../image/MonLogo.jpg" />
+</head>
+
+<body class="page-reservation">
+  <div class="resa">
+
+
+
+
+
+    <!-- ========== BARRE LATÉRALE ========== -->
+    <aside class="resa__sidebar">
+      <a href="../index.html" class="resa__logo">
+        <img src="../image png/logo_h_tel_parlementaire_option_prestige-removebg-preview.png" alt="Hôtel Parlementaire" />
+      </a>
+
+      <nav class="resa__steps-nav" aria-label="Étapes de réservation">
+        <button class="resa__step-icon resa__step-icon--actif" data-step="1" aria-label="Étape 1 : choisir une offre" aria-current="step">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 12.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            <rect x="3" y="3" width="9" height="9" rx="2" stroke="currentColor" stroke-width="1.6" />
+            <rect x="3" y="13" width="9" height="8" rx="2" stroke="currentColor" stroke-width="1.6" />
+            <rect x="13" y="3" width="8" height="9" rx="2" stroke="currentColor" stroke-width="1.6" />
+          </svg>
+          <span class="resa__step-tooltip">Choisir une offre</span>
+        </button>
+
+        <button class="resa__step-icon" data-step="2" aria-label="Étape 2 : vos informations">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="2" width="16" height="20" rx="2" stroke="currentColor" stroke-width="1.6" />
+            <path d="M8 7h8M8 11h8M8 15h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M8 19.5l1.6 1.6L12.5 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span class="resa__step-tooltip">Vos informations</span>
+        </button>
+
+        <button class="resa__step-icon" data-step="3" aria-label="Étape 3 : récapitulatif et paiement">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.5l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+          </svg>
+          <span class="resa__step-tooltip">Récapitulatif & paiement</span>
+        </button>
+      </nav>
+
+      <a href="https://wa.me/22564078851?text=Bonjour,%20j'ai%20une%20question%20concernant%20ma%20réservation" class="resa__sidebar-help" target="_blank" rel="noopener noreferrer" aria-label="Besoin d'aide ? Contactez-nous sur WhatsApp">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.84067 0.0135162C6.23837 -0.0347938 6.64112 0.0471575 6.98838 0.247195C7.33277 0.445695 7.60377 0.749622 7.76203 1.11416L7.76301 1.11613L10.3157 6.80003L10.3196 6.80788L10.3235 6.81672C10.4452 7.09871 10.4947 7.40714 10.4678 7.71314C10.4465 7.95481 10.3757 8.18823 10.2646 8.4024L10.0378 8.73426L7.64814 11.5767L7.56273 11.6788L7.62261 11.7976C8.53285 13.5983 10.418 15.4683 12.2419 16.3799L12.3617 16.4398L12.4628 16.3534L15.3395 13.9027L15.3405 13.9017C15.3697 13.8769 15.3989 13.8554 15.4278 13.8369L15.4288 13.8359C15.6842 13.6684 15.9782 13.5663 16.283 13.5394C16.5896 13.5125 16.8989 13.5625 17.1813 13.6847L17.1882 13.6877L22.8836 16.2375L22.8855 16.2385C23.2514 16.3976 23.5573 16.6705 23.7554 17.0161C23.9528 17.3608 24.0339 17.7604 23.9871 18.1551L23.9861 18.1619V18.1649C23.7727 19.7819 22.978 21.2656 21.7506 22.3397C20.5232 23.4137 18.9468 24.0031 17.3158 24C8.06277 23.9998 0.482674 16.7077 0.0215994 7.56685L0.00490895 7.12993L0 6.68417L0.00589074 6.37882C0.072034 4.85735 0.6536 3.39988 1.66021 2.24918C2.73163 1.0246 4.21163 0.23019 5.82398 0.0144981H5.8279L5.84067 0.0135162Z" fill="currentColor" />
+        </svg>
+      </a>
+    </aside>
+
+
+
+
+
+
+
+    
+    <!-- ========== ZONE PRINCIPALE ========== -->
+    <main class="resa__main">
+      <!-- ÉTAPE 1 — CHOISIR UNE OFFRE -->
+      <section class="resa__panel resa__panel--actif" data-panel="1" aria-labelledby="titre-etape1">
+        <div class="resa__panel-header">
+          <span class="resa__badge-etape">Étape 1 / 3</span>
+          <h1 id="titre-etape1">Choisissez votre offre</h1>
+          <p class="resa__intro ombre">
+            Sélectionnez la formule qui correspond à votre séjour. Vous
+            pourrez préciser les détails à l'étape suivante.
+          </p>
+        </div>
+
+        <div class="resa__categories" id="categories-offres" role="tablist">
+          <button class="resa__categorie resa__categorie--actif" data-categorie="chambre" role="tab" aria-selected="true">
+            <h3>Chambres</h3>
+          </button>
+          <button class="resa__categorie" data-categorie="affaires" role="tab" aria-selected="false">
+            <h3>Affaires</h3>
+          </button>
+          <button class="resa__categorie" data-categorie="evenement" role="tab" aria-selected="false">
+            <h3>Salles d'événement</h3>
+          </button>
+        </div>
+
+        <div class="resa__grille-offres" id="grille-offres-resa">
+          <!-- Cartes générées en JS depuis OFFRES -->
+        </div>
+      </section>
+
+      <!-- ÉTAPE 2 — INFORMATIONS -->
+      <section class="resa__panel" data-panel="2" aria-labelledby="titre-etape2">
+        <div class="resa__panel-header">
+          <span class="resa__badge-etape">Étape 2 / 3</span>
+          <h1 id="titre-etape2">Vos informations</h1>
+        </div>
+
+        <!-- Résumé de l'offre sélectionnée -->
+        <div class="resa__offre-resume" id="offre-resume-etape2">
+          <div class="resa__offre-resume-icone" id="resume-icone"></div>
+          <div class="resa__offre-resume-texte">
+            <h3 id="resume-titre">—</h3>
+            <p class="ombre" id="resume-prix">À partir de — FCFA</p>
+          </div>
+          <span class="resa__offre-resume-tag" id="resume-tag">—</span>
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- ===== FORMULAIRE CHAMBRE ===== -->
+        <form class="resa__formulaire" id="form-chambre" data-form="chambre" novalidate>
+          <h2 class="resa__sous-titre">Informations personnelles</h2>
+          <div class="resa__champs-grille">
+            <div class="resa__champ">
+              <label for="ch-nom">Nom complet</label>
+              <input type="text" id="ch-nom" name="nom" placeholder="Ex : Akoua Fofier" required />
+            </div>
+            <div class="resa__champ">
+              <label for="ch-tel">Téléphone / WhatsApp</label>
+              <input type="tel" id="ch-tel" name="tel" placeholder="+225 07 00 00 00" required />
+            </div>
+            <div class="resa__champ">
+              <label for="ch-email">Email</label>
+              <input type="email" id="ch-email" name="email" placeholder="exemple@email.com" />
+            </div>
+
+
+            <div class="resa__champ">
+  <label for="ch-piece">Type de pièce d'identité</label>
+  <select id="ch-piece" name="piece">
+    <option>Carte Nationale d'Identité (CNI)</option>
+    <option>Passeport</option>
+    <option>Permis de conduire</option>
+    <option>Carte consulaire</option>
+  </select>
+</div>
+<div class="resa__champ">
+  <label for="ch-piece-numero">Numéro de la pièce</label>
+  <input type="text" id="ch-piece-numero" name="piece_numero" placeholder="Ex : CI001234567" required />
+</div>
+
+
+
+            <div class="resa__champ">
+              <label for="ch-personnes">Nombre de personnes</label>
+              <input type="number" id="ch-personnes" name="personnes" min="1" max="6" value="1" />
+            </div>
+          </div>
+
+          <h2 class="resa__sous-titre">Type de chambre</h2>
+          <div class="resa__choix-grille resa__choix-grille--chambres" id="choix-chambres" role="radiogroup">
+            <!-- options générées en JS -->
+          </div>
+
+          <div class="resa__champs-grille resa__champs-grille--3">
+            <div class="resa__champ">
+              <label for="ch-arrivee">Arrivée</label>
+              <input type="date" id="ch-arrivee" name="arrivee" required />
+            </div>
+            <div class="resa__champ">
+              <label for="ch-depart">Départ</label>
+              <input type="date" id="ch-depart" name="depart" required />
+            </div>
+            <div class="resa__champ">
+              <label for="ch-lit">Lit</label>
+              <select id="ch-lit" name="lit">
+                <option>Simple</option>
+                <option>Double</option>
+                <option>Twin (2 lits simples)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="resa__champ">
+            <label for="ch-demande">Demande spéciale (optionnel)</label>
+            <textarea id="ch-demande" name="demande" rows="3" placeholder="Ex : chambre silencieuse, allergies, heure d'arrivée tardive..."></textarea>
+          </div>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ===== FORMULAIRE AFFAIRES ===== -->
+        <form class="resa__formulaire" id="form-affaires" data-form="affaires" novalidate>
+          <h2 class="resa__sous-titre">Informations du responsable</h2>
+          <div class="resa__champs-grille">
+            <div class="resa__champ">
+              <label for="af-nom">Nom complet</label>
+              <input type="text" id="af-nom" name="nom" placeholder="Ex : Yao zeez " required />
+            </div>
+            <div class="resa__champ">
+              <label for="af-tel">Téléphone / WhatsApp</label>
+              <input type="tel" id="af-tel" name="tel" placeholder="+225 07 00 00 00" required />
+            </div>
+            <div class="resa__champ">
+              <label for="af-email">Email professionnel</label>
+              <input type="email" id="af-email" name="email" placeholder="contact@entreprise.com" />
+            </div>
+            <div class="resa__champ">
+              <label for="af-entreprise">Entreprise / Organisation</label>
+              <input type="text" id="af-entreprise" name="entreprise" placeholder="Ex : Cabinet XYZ" />
+            </div>
+          </div>
+
+
+<div class="resa__champ">
+  <label for="af-piece">Type de pièce d'identité</label>
+  <select id="af-piece" name="piece">
+    <option>Carte Nationale d'Identité (CNI)</option>
+    <option>Passeport</option>
+    <option>Permis de conduire</option>
+    <option>Carte consulaire</option>
+  </select>
+</div>
+<div class="resa__champ">
+  <label for="af-piece-numero">Numéro de la pièce</label>
+  <input type="text" id="af-piece-numero" name="piece_numero" placeholder="Ex : CI001234567" required />
+</div>
+
+
+          <h2 class="resa__sous-titre">Choisir la salle</h2>
+          <div class="resa__choix-grille resa__choix-grille--affaires" id="choix-affaires" role="radiogroup">
+            <!-- options générées en JS -->
+          </div>
+
+          <div class="resa__info-bandeau" id="affaires-info">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.4" />
+              <path d="M10 9v5M10 6.2v.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            </svg>
+            <span>Sélectionnez une salle pour voir les détails.</span>
+          </div>
+
+          <div class="resa__champs-grille resa__champs-grille--3">
+            <div class="resa__champ">
+              <label for="af-date">Date</label>
+              <input type="date" id="af-date" name="date" required />
+            </div>
+            <div class="resa__champ">
+              <label for="af-heure">Heure de début</label>
+              <input type="time" id="af-heure" name="heure" required />
+            </div>
+            <div class="resa__champ">
+              <label for="af-duree">Durée</label>
+              <select id="af-duree" name="duree">
+                <option>2h</option>
+                <option>3h</option>
+                <option>Demi-journée (4h)</option>
+                <option>Journée complète (8h)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="resa__champ">
+            <label for="af-participants">Participants</label>
+            <input type="number" id="af-participants" name="participants" min="1" placeholder="Max —" />
+            <span class="resa__compteur" id="af-compteur">0 / —</span>
+          </div>
+
+          <div class="resa__champs-grille">
+            <div class="resa__champ">
+              <label for="af-equipements">Équipements</label>
+              <select id="af-equipements" name="equipements">
+                <option>Projecteur + tableau</option>
+                <option>Écran + visioconférence</option>
+                <option>Sonorisation</option>
+                <option>Aucun équipement</option>
+              </select>
+            </div>
+            <div class="resa__champ">
+              <label for="af-restauration">Restauration</label>
+              <select id="af-restauration" name="restauration">
+                <option>Non</option>
+                <option>Pause-café</option>
+                <option>Déjeuner</option>
+                <option>Pause-café + déjeuner</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="resa__champ">
+            <label for="af-remarques">Remarques supplémentaires (optionnel)</label>
+            <textarea id="af-remarques" name="remarques" rows="3" placeholder="Ex : présentation spéciale, accès PMR, parking..."></textarea>
+          </div>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ===== FORMULAIRE ÉVÉNEMENT ===== -->
+        <form class="resa__formulaire" id="form-evenement" data-form="evenement" novalidate>
+          <h2 class="resa__sous-titre">Informations du client</h2>
+          <div class="resa__champs-grille">
+            <div class="resa__champ">
+              <label for="ev-nom">Nom complet</label>
+              <input type="text" id="ev-nom" name="nom" placeholder="Ex : Yao Bernadette" required />
+            </div>
+            <div class="resa__champ">
+              <label for="ev-tel">Téléphone / WhatsApp</label>
+              <input type="tel" id="ev-tel" name="tel" placeholder="+225 07 00 00 00" required />
+            </div>
+            <div class="resa__champ">
+              <label for="ev-email">Email</label>
+              <input type="email" id="ev-email" name="email" placeholder="exemple@email.com" />
+            </div>
+            <div class="resa__champ">
+              <label for="ev-invites">Nombre d'invités</label>
+              <input type="number" id="ev-invites" name="invites" min="1" placeholder="Ex : 150" />
+              <span class="resa__compteur" id="ev-compteur">0 / —</span>
+            </div>
+          </div>
+
+
+
+          <div class="resa__champ">
+  <label for="ev-piece">Type de pièce d'identité</label>
+  <select id="ev-piece" name="piece">
+    <option>Carte Nationale d'Identité (CNI)</option>
+    <option>Passeport</option>
+    <option>Permis de conduire</option>
+    <option>Carte consulaire</option>
+  </select>
+</div>
+<div class="resa__champ">
+  <label for="ev-piece-numero">Numéro de la pièce</label>
+  <input type="text" id="ev-piece-numero" name="piece_numero" placeholder="Ex : CI001234567" required />
+</div>
+
+
+
+          <h2 class="resa__sous-titre">Type d'événement</h2>
+          <div class="resa__choix-grille resa__choix-grille--evenement" id="choix-evenement" role="radiogroup">
+            <button type="button" class="resa__pastille" data-type="mariage">Mariage</button>
+            <button type="button" class="resa__pastille" data-type="bapteme">Baptême</button>
+            <button type="button" class="resa__pastille" data-type="anniversaire">Anniversaire</button>
+            <button type="button" class="resa__pastille" data-type="conference">Conférence</button>
+            <button type="button" class="resa__pastille" data-type="autre">Autre</button>
+          </div>
+
+          <div class="resa__champs-grille resa__champs-grille--3">
+            <div class="resa__champ">
+              <label for="ev-date">Date de l'événement</label>
+              <input type="date" id="ev-date" name="date" required />
+            </div>
+            <div class="resa__champ">
+              <label for="ev-heure">Heure cérémonie</label>
+              <input type="time" id="ev-heure" name="heure" />
+            </div>
+            <div class="resa__champ">
+              <label for="ev-salle">Salle souhaitée</label>
+              <select id="ev-salle" name="salle">
+                <!-- options générées en JS -->
+              </select>
+            </div>
+          </div>
+
+          <div class="resa__champs-grille">
+            <div class="resa__champ">
+              <label for="ev-decoration">Décoration</label>
+              <select id="ev-decoration" name="decoration">
+                <option>Je gère moi-même</option>
+                <option>Décoration standard incluse</option>
+                <option>Décoration premium (sur devis)</option>
+              </select>
+            </div>
+            <div class="resa__champ">
+              <label for="ev-traiteur">Traiteur / Buffet</label>
+              <select id="ev-traiteur" name="traiteur">
+                <option>Non inclus</option>
+                <option>Buffet standard</option>
+                <option>Buffet gastronomique</option>
+              </select>
+            </div>
+            <div class="resa__champ">
+              <label for="ev-gateau">Gâteau</label>
+              <select id="ev-gateau" name="gateau">
+                <option>Non</option>
+                <option>Oui — petit (jusqu'à 50 pers.)</option>
+                <option>Oui — grand (50+ pers.)</option>
+              </select>
+            </div>
+            <div class="resa__champ">
+              <label for="ev-sono">Sonorisation / DJ</label>
+              <select id="ev-sono" name="sono">
+                <option>Non</option>
+                <option>Sonorisation seule</option>
+                <option>Sonorisation + DJ</option>
+              </select>
+            </div>
+            <div class="resa__champ">
+              <label for="ev-photographe">Photographe</label>
+              <select id="ev-photographe" name="photographe">
+                <option>Non merci</option>
+                <option>Photographe demi-journée</option>
+                <option>Photographe journée complète</option>
+              </select>
+            </div>
+            <div class="resa__champ">
+              <label for="ev-transfert">Transfert mariés / invités</label>
+              <select id="ev-transfert" name="transfert">
+                <option>Non</option>
+                <option>Oui</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="resa__champ">
+            <label for="ev-demandes">Demandes particulières</label>
+            <textarea id="ev-demandes" name="demandes" rows="3" placeholder="Ex : couleurs, thème, espace danse, feux d'artifice..."></textarea>
+          </div>
+
+          <div class="resa__info-bandeau">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.4" />
+              <path d="M10 9v5M10 6.2v.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            </svg>
+            <span>Un acompte de 30% est requis pour confirmer. Notre coordinateur vous rappellera sous 24h.</span>
+          </div>
+        </form>
+
+        <p class="resa__erreur" id="erreur-etape2" role="alert"></p>
+      </section>
+
+      <!-- ÉTAPE 3 — RÉCAPITULATIF & PAIEMENT -->
+      <section class="resa__panel" data-panel="3" aria-labelledby="titre-etape3">
+        <div class="resa__panel-header">
+          <span class="resa__badge-etape">Étape 3 / 3</span>
+          <h1 id="titre-etape3">Récapitulatif & paiement</h1>
+          <p class="resa__intro ombre">
+            Vérifiez les détails de votre réservation puis choisissez votre
+            moyen de paiement pour l'acompte.
+          </p>
+        </div>
+
+        <div class="resa__recap-conteneur">
+          <div class="resa__recap-gauche">
+            <div class="resa__recap-image">
+              <img id="recap-image" src="" alt="" />
+              <span class="resa__recap-tag" id="recap-tag">—</span>
+            </div>
+            <div class="resa__recap-infos" id="recap-infos">
+              <h2 id="recap-titre">—</h2>
+              <ul class="resa__recap-liste" id="recap-liste">
+                <!-- détails générés en JS -->
+              </ul>
+            </div>
+          </div>
+
+          <div class="resa__recap-droite">
+            <div class="resa__recap-bloc">
+              <h3 class="resa__recap-bloc-titre">Prix de l'offre</h3>
+              <div class="resa__recap-prix" id="recap-prix">— FCFA</div>
+            </div>
+
+            <div class="resa__recap-bloc">
+              <h3 class="resa__recap-bloc-titre">Résumé de la réservation</h3>
+              <ul class="resa__recap-resume" id="recap-resume">
+                <!-- résumé client généré en JS -->
+              </ul>
+            </div>
+
+            <div class="resa__recap-bloc resa__recap-bloc--acompte">
+              <div class="resa__acompte-ligne">
+                <span>Acompte requis (30%)</span>
+                <strong id="recap-acompte">— FCFA</strong>
+              </div>
+              <p class="ombre resa__acompte-note">
+                Le solde restant sera réglé directement à l'hôtel lors de
+                votre arrivée ou de votre événement.
+              </p>
+            </div>
+
+            <div class="resa__recap-bloc">
+              <h3 class="resa__recap-bloc-titre">Moyen de paiement</h3>
+              <div class="resa__paiement-grille" id="paiement-grille" role="radiogroup">
+                <button type="button" class="resa__paiement" data-paiement="om">
+                  <span class="resa__paiement-pastille" style="background: #ff6600">OM</span>
+                  <span>Orange Money</span>
+                </button>
+                <button type="button" class="resa__paiement" data-paiement="momo">
+                  <span class="resa__paiement-pastille" style="background: #ffcc00">MoMo</span>
+                  <span>MTN Mobile Money</span>
+                </button>
+                <button type="button" class="resa__paiement" data-paiement="moov">
+                  <span class="resa__paiement-pastille" style="background: #1e90c8">MF</span>
+                  <span>Moov Money</span>
+                </button>
+                <button type="button" class="resa__paiement" data-paiement="wave">
+                  <span class="resa__paiement-pastille" style="background: #00c2d1">W</span>
+                  <span>Wave</span>
+                </button>
+                <button type="button" class="resa__paiement" data-paiement="carte">
+                  <span class="resa__paiement-pastille" style="background: #412f20">CB</span>
+                  <span>Carte bancaire</span>
+                </button>
+                <button type="button" class="resa__paiement" data-paiement="especes">
+                  <span class="resa__paiement-pastille" style="background: #fcb116">FCFA</span>
+                  <span>Espèces à l'hôtel</span>
+                </button>
+              </div>
+
+              <div class="resa__champ resa__paiement-numero" id="paiement-numero-bloc" hidden>
+                <label for="paiement-numero" id="paiement-numero-label">Numéro de téléphone</label>
+                <input type="tel" id="paiement-numero" placeholder="+225 07 00 00 00" />
+              </div>
+            </div>
+
+            <p class="resa__erreur" id="erreur-etape3" role="alert"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ÉCRAN DE CONFIRMATION -->
+      <section class="resa__panel" data-panel="confirmation" aria-labelledby="titre-confirmation">
+        <div class="resa__confirmation">
+          <div class="resa__confirmation-icone">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="31" stroke="currentColor" stroke-width="2" />
+              <path d="M20 33l8 8 16-18" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h1 id="titre-confirmation">Réservation envoyée !</h1>
+          <p class="ombre">
+            Merci <span id="confirmation-nom">—</span>, votre demande de
+            réservation a bien été enregistrée. Notre équipe vous contactera
+            très prochainement par téléphone ou WhatsApp pour confirmer les
+            derniers détails.
+          </p>
+          <div class="resa__confirmation-recap">
+            <div><span>Référence</span><strong id="confirmation-ref">—</strong></div>
+            <div><span>Offre</span><strong id="confirmation-offre">—</strong></div>
+            <div><span>Acompte</span><strong id="confirmation-acompte">—</strong></div>
+            <div><span>Paiement</span><strong id="confirmation-paiement">—</strong></div>
+          </div>
+          <div class="resa__confirmation-actions">
+            <a href="http://127.0.0.1:5500/index.html" class="bouton bouton--blanc">
+              <span class="bouton__texte">Retour à l'accueil</span>
+              <div class="bouton__icone">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 5V19M19 5H5M19 5L5 19" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+            </a>
+            <a href="https://wa.me/22564078851?text=Bonjour,%20je%20viens%20de%20faire%20une%20réservation%20sur%20le%20site" class="bouton bouton--dore" target="_blank" rel="noopener noreferrer">
+              <span class="bouton__texte">Nous écrire sur WhatsApp</span>
+              <div class="bouton__icone">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 5V19M19 5H5M19 5L5 19" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      
+      <!-- ========== BARRE DE NAVIGATION BAS ========== -->
+      <div class="resa__navigation-bas" id="navigation-bas">
+        <button type="button" class="resa__bouton-precedent" id="bouton-precedent" hidden>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12H5M5 12l6-6M5 12l6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>Précédent</span>
+        </button>
+        <div class="resa__progression" aria-hidden="true">
+          <span class="resa__progression-point resa__progression-point--actif" data-point="1"></span>
+          <span class="resa__progression-point" data-point="2"></span>
+          <span class="resa__progression-point" data-point="3"></span>
+        </div>
+        <button type="button" class="bouton bouton--dore resa__bouton-suivant" id="bouton-suivant">
+          <span class="bouton__texte">Continuer</span>
+          <div class="bouton__icone">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 12H5M19 12l-6-6M19 12l-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script defer src="reservation.js"></script>
+</body>
+
+</html>
+```

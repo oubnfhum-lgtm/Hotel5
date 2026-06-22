@@ -1,0 +1,1032 @@
+@charset "UTF-8";
+
+/* ============================================================
+   RÉSERVATION — HÔTEL PARLEMENTAIRE
+   Palette reprise de style.css :
+   - Brun texte / accent  : #412f20
+   - Doré / jaune         : #fcb116
+   - Gris ombre           : #717171
+   - Brun clair (droits)  : #8e7057
+   - Fond crème           : #FBF4ED / #F7ECE2
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.page-reservation {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #412f20;
+  background-color: #f3e7da;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+
+.ombre {
+  color: #8e7057;
+}
+
+/* ============================================================
+   STRUCTURE GÉNÉRALE
+   ============================================================ */
+.resa {
+  display: flex;
+  height: 100%;
+  padding: 1.4vw;
+  gap: 1.4vw;
+  overflow: hidden;
+}
+@media screen and (max-width: 760px) {
+  .resa {
+    flex-direction: column;
+    padding: 4vw;
+    gap: 4vw;
+  }
+}
+
+
+/* ---- Barre latérale ---- */
+.resa__sidebar {
+  width: 5vw;
+  min-width: 72px;
+  background-color: #fff;
+  border-radius: 1.15em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.55em 0 0.45em;
+  gap: 0.25em;
+}
+@media screen and (max-width: 760px) {
+  .resa__sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.1em 1.6em;
+    border-radius: 1.4em;
+    gap: 1em;
+  }
+}
+
+.resa__logo img {
+  width: 6.2em;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.resa__steps-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 760px) {
+  .resa__steps-nav {
+    flex-direction: row;
+    flex: none;
+    gap: 0.9em;
+  }
+}
+
+.resa__step-icon {
+  width: 2.45em;
+  height: 2.45em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9b6a4;
+  background-color: #faf3ec;
+  border: 1.5px solid transparent;
+  position: relative;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+.resa__step-icon svg {
+  width: 1.05em;
+  height: 1.05em;
+}
+.resa__step-icon--actif,
+.resa__step-icon--complete {
+  color: #412f20;
+  background-color: #fdf0db;
+  border-color: #fcb116;
+}
+.resa__step-icon--complete {
+  color: #fff;
+  background-color: #412f20;
+  border-color: #412f20;
+}
+
+.resa__step-tooltip {
+  position: absolute;
+  left: calc(100% + 0.8em);
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #412f20;
+  color: #fff;
+  font-size: 0.78rem;
+  padding: 0.4em 0.9em;
+  border-radius: 0.5em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 5;
+}
+@media (hover: hover) {
+  .resa__step-icon:hover .resa__step-tooltip {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 760px) {
+  .resa__step-tooltip {
+    display: none;
+  }
+}
+
+.resa__sidebar-help {
+  width: 2.45em;
+  height: 2.45em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25d366;
+  color: #fff;
+  margin-top: 0;
+  transition: opacity 0.2s ease;
+}
+@media (hover: hover) {
+  .resa__sidebar-help:hover {
+    opacity: 0.8;
+  }
+}
+
+/* ---- Zone principale ---- */
+.resa__main {
+  flex: 1;
+  background-color: #fdf8f3;
+  border-radius: 1.2em;
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  position: relative;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media screen and (max-width: 760px) {
+  .resa__main {
+    padding: 6vw 5vw 7vw;
+    border-radius: 1.4em;
+  }
+}
+
+/* ============================================================
+   PANELS / ÉTAPES
+   ============================================================ */
+.resa__panel {
+  display: none;
+  flex-direction: column;
+  gap: 0.9em;
+  flex: 1;
+  animation: apparition-panel 0.4s ease;
+}
+.resa__panel--actif {
+  display: flex;
+}
+@keyframes apparition-panel {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.resa__panel-header h1 {
+  font-size: clamp(1.5rem, 2.6vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0.2em 0 0;
+}
+.resa__badge-etape {
+  display: inline-block;
+  padding: 0.35em 1.1em;
+  background-color: #fdf0db;
+  color: #b9821a;
+  border-radius: 10em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.resa__intro {
+  margin-top: 0.6em;
+  max-width: 46em;
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   ÉTAPE 1 — CATALOGUE
+   ============================================================ */
+.resa__categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8em;
+}
+.resa__categorie {
+  padding: 0.85em 1.6em;
+  border-radius: 10em;
+  border: 1.5px solid #e7d8c8;
+  background-color: #fff;
+  color: #8e7057;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+.resa__categorie h3 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin: 0;
+}
+.resa__categorie--actif {
+  background-color: #412f20;
+  border-color: #412f20;
+  color: #fff;
+}
+@media (hover: hover) {
+  .resa__categorie:not(.resa__categorie--actif):hover {
+    border-color: #fcb116;
+    color: #412f20;
+  }
+}
+
+.resa__grille-offres {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+@media screen and (max-width: 1100px) {
+  .resa__grille-offres {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 640px) {
+  .resa__grille-offres {
+    grid-template-columns: 1fr;
+  }
+}
+
+.resa__carte-offre {
+  position: relative;
+  height: 12.8125vw;
+  min-height: 11rem;
+  padding: 2em;
+  border: 0.15em solid #fff;
+  border-radius: 1.3em;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+.resa__carte-offre img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  transition:
+    filter 0.3s ease,
+    transform 0.6s ease;
+}
+.resa__carte-offre::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(0deg, #000 0.25%, #000000b0 35.18%, #0000 67.82%);
+  opacity: 0.7;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.resa__carte-offre__details {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 100%;
+}
+.resa__carte-offre__details h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 0.3em;
+  letter-spacing: -0.02em;
+}
+.resa__carte-offre__details p {
+  font-size: 0.82rem;
+  margin: 0;
+  color: #f1e6da;
+}
+.resa__carte-offre__details b {
+  color: #fcb116;
+}
+.resa__carte-offre__tag {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  z-index: 2;
+  background-color: #fcb116;
+  color: #0f0f0f;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.4em 0.9em;
+  border-radius: 10em;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+@media (hover: hover) {
+  .resa__carte-offre:hover {
+    border-color: #fcb116;
+    box-shadow: 0 0 2.5em #fcb11666;
+    transform: translateY(-3px);
+  }
+  .resa__carte-offre:hover::after {
+    opacity: 0.9;
+  }
+  .resa__carte-offre:hover img {
+    filter: brightness(0.8);
+    transform: scale(1.08);
+  }
+}
+.resa__carte-offre--selectionnee {
+  border-color: #fcb116;
+  box-shadow: 0 0 2.2em #fcb11666;
+}
+
+/* coche de sélection */
+.resa__carte-offre__check {
+  display: none;
+}
+
+/* ============================================================
+   ÉTAPE 2 — FORMULAIRES
+   ============================================================ */
+.resa__offre-resume {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1.1em 1.4em;
+  background-color: #fbf1e6;
+  border: 1px solid #f0ddc8;
+  border-radius: 1em;
+}
+.resa__offre-resume-icone {
+  width: 2.6em;
+  height: 2.6em;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #b9821a;
+}
+.resa__offre-resume-icone svg {
+  width: 1.3em;
+  height: 1.3em;
+}
+.resa__offre-resume-texte {
+  flex: 1;
+  min-width: 0;
+}
+.resa__offre-resume-texte h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.resa__offre-resume-texte p {
+  margin: 0.2em 0 0;
+  font-size: 0.85rem;
+}
+.resa__offre-resume-tag {
+  background-color: #fcb116;
+  color: #0f0f0f;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.4em 0.9em;
+  border-radius: 10em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.resa__formulaire {
+  display: none;
+  flex-direction: column;
+  gap: 0.9em;
+}
+.resa__formulaire--actif {
+  display: flex;
+}
+
+.resa__sous-titre {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b29074;
+  margin: 0;
+}
+
+.resa__champs-grille {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8em;
+}
+.resa__champs-grille--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (max-width: 700px) {
+  .resa__champs-grille,
+  .resa__champs-grille--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.resa__champ {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.resa__champ label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b5743;
+}
+.resa__champ input,
+.resa__champ select,
+.resa__champ textarea {
+  background-color: #2c211a;
+  color: #fff;
+  border: none;
+  border-radius: 0.7em;
+  padding: 0.95em 1.1em;
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+.resa__champ input::placeholder,
+.resa__champ textarea::placeholder {
+  color: #b8a797;
+}
+.resa__champ input:focus,
+.resa__champ select:focus,
+.resa__champ textarea:focus {
+  box-shadow: 0 0 0 2px #fcb116;
+}
+.resa__champ input[type="date"],
+.resa__champ input[type="time"] {
+  color-scheme: dark;
+}
+.resa__champ select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.1em center;
+  padding-right: 2.6em;
+}
+.resa__champ textarea {
+  resize: vertical;
+  min-height: 5em;
+  font-family: inherit;
+}
+.resa__compteur {
+  align-self: flex-end;
+  font-size: 0.78rem;
+  color: #b29074;
+}
+
+/* ---- Pastilles de choix (chambre / salle / type événement) ---- */
+.resa__choix-grille {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.55em;
+}
+.resa__choix-grille--evenement {
+  grid-template-columns: repeat(5, 1fr);
+}
+@media screen and (max-width: 700px) {
+  .resa__choix-grille,
+  .resa__choix-grille--evenement {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.resa__pastille {
+  padding: 1em 1.2em;
+  border-radius: 0.8em;
+  border: 1.5px solid #e7d8c8;
+  background-color: #fff;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #6b5743;
+  text-align: center;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+.resa__pastille--actif {
+  background-color: #412f20;
+  border-color: #412f20;
+  color: #fff;
+}
+@media (hover: hover) {
+  .resa__pastille:not(.resa__pastille--actif):hover {
+    border-color: #fcb116;
+  }
+}
+
+.resa__info-bandeau {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8em;
+  background-color: #fdf0db;
+  color: #8a6a31;
+  border-radius: 0.8em;
+  padding: 1em 1.2em;
+  font-size: 0.85rem;
+}
+.resa__info-bandeau svg {
+  width: 1.2em;
+  height: 1.2em;
+  flex-shrink: 0;
+  margin-top: 0.1em;
+}
+
+.resa__erreur {
+  color: #c1462f;
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-height: 1.2em;
+  margin: 0;
+}
+
+/* ============================================================
+   ÉTAPE 3 — RÉCAPITULATIF
+   ============================================================ */
+.resa__recap-conteneur {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2em;
+  flex: 1;
+}
+@media screen and (max-width: 900px) {
+  .resa__recap-conteneur {
+    grid-template-columns: 1fr;
+  }
+}
+
+.resa__recap-gauche {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4em;
+}
+
+.resa__recap-image {
+  position: relative;
+  border-radius: 1.2em;
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  background-color: #ece0d2;
+}
+.resa__recap-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.resa__recap-tag {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background-color: #fcb116;
+  color: #0f0f0f;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.4em 0.9em;
+  border-radius: 10em;
+  text-transform: uppercase;
+}
+
+.resa__recap-infos h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 0.6em;
+  letter-spacing: -0.02em;
+}
+.resa__recap-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+.resa__recap-liste li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  font-size: 0.9rem;
+  padding-bottom: 0.6em;
+  border-bottom: 1px dashed #e7d8c8;
+}
+.resa__recap-liste li span:first-child {
+  color: #8e7057;
+}
+.resa__recap-liste li span:last-child,
+.resa__recap-liste li strong {
+  font-weight: 700;
+  text-align: right;
+}
+
+.resa__recap-droite {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+.resa__recap-bloc {
+  background-color: #fbf1e6;
+  border: 1px solid #f0ddc8;
+  border-radius: 1em;
+  padding: 1.3em 1.5em;
+}
+.resa__recap-bloc-titre {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b29074;
+  margin: 0 0 0.8em;
+}
+.resa__recap-prix {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.resa__recap-resume {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55em;
+  font-size: 0.88rem;
+}
+.resa__recap-resume li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+.resa__recap-resume li span:first-child {
+  color: #8e7057;
+}
+.resa__recap-resume li span:last-child {
+  font-weight: 600;
+  text-align: right;
+}
+
+.resa__recap-bloc--acompte {
+  background-color: #412f20;
+  border-color: #412f20;
+  color: #fff;
+}
+.resa__acompte-ligne {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.resa__acompte-ligne strong {
+  font-size: 1.4rem;
+  color: #fcb116;
+}
+.resa__acompte-note {
+  margin: 0.6em 0 0;
+  font-size: 0.8rem;
+  color: #d8c7b8 !important;
+}
+
+/* ---- Moyens de paiement ---- */
+.resa__paiement-grille {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8em;
+}
+@media screen and (max-width: 420px) {
+  .resa__paiement-grille {
+    grid-template-columns: 1fr;
+  }
+}
+.resa__paiement {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  padding: 0.9em 1em;
+  border-radius: 0.8em;
+  border: 1.5px solid #e7d8c8;
+  background-color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b5743;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+.resa__paiement-pastille {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.resa__paiement--actif {
+  border-color: #fcb116;
+  background-color: #fdf3e1;
+  color: #412f20;
+}
+@media (hover: hover) {
+  .resa__paiement:not(.resa__paiement--actif):hover {
+    border-color: #fcb116;
+  }
+}
+
+.resa__paiement-numero {
+  margin-top: 1.2em;
+}
+
+/* ============================================================
+   CONFIRMATION
+   ============================================================ */
+.resa__confirmation {
+  margin: auto;
+  text-align: center;
+  max-width: 36em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2em;
+  padding: 2em 0;
+}
+.resa__confirmation-icone {
+  width: 4em;
+  height: 4em;
+  color: #fcb116;
+}
+.resa__confirmation h1 {
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+.resa__confirmation-recap {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9em;
+  margin-top: 0.6em;
+}
+@media screen and (max-width: 500px) {
+  .resa__confirmation-recap {
+    grid-template-columns: 1fr;
+  }
+}
+.resa__confirmation-recap > div {
+  background-color: #fbf1e6;
+  border: 1px solid #f0ddc8;
+  border-radius: 0.9em;
+  padding: 1em 1.2em;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+.resa__confirmation-recap span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #b29074;
+}
+.resa__confirmation-recap strong {
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+.resa__confirmation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9em;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+/* ============================================================
+   BOUTONS UNIVERSELS (repris de style.css)
+   ============================================================ */
+.bouton {
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  gap: 1.2em;
+  padding: 0.3em 0.3em 0.3em 1.6em;
+  border-radius: 8.3333333333vw;
+  transition:
+    box-shadow 0.3s ease,
+    color 0.3s ease,
+    background-color 0.3s ease;
+  font-weight: 700;
+}
+.bouton__texte {
+  white-space: nowrap;
+  
+}
+.bouton__icone {
+  padding: 0.85em;
+  border-radius: 8.3333333333vw;
+  height: 1.1em;
+  width: 1.1em;
+  min-height: 1.1em;
+  min-width: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bouton__icone svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bouton--dore {
+  background-color: #fcb116;
+  color: #0f0f0f;
+}
+.bouton--dore .bouton__icone {
+  background-color: #412f20;
+}
+.bouton--dore .bouton__icone svg path,
+.bouton--dore .bouton__icone svg {
+  stroke: #fcb116;
+}
+@media (hover: hover) {
+  .bouton--dore:hover {
+    box-shadow: 0 0 2em #fcb11666;
+  }
+}
+
+.bouton--blanc {
+  background-color: #fff;
+  color: #412f20;
+  border: 1.5px solid #412f20;
+}
+.bouton--blanc .bouton__icone {
+  background-color: #412f20;
+}
+.bouton--blanc .bouton__icone svg {
+  stroke: #fff;
+}
+@media (hover: hover) {
+  .bouton--blanc:hover {
+    background-color: #412f20;
+    color: #fff;
+  }
+  .bouton--blanc:hover .bouton__icone {
+    background-color: #fff;
+  }
+  .bouton--blanc:hover .bouton__icone svg {
+    stroke: #412f20;
+  }
+}
+
+/* Bouton désactivé */
+.resa__bouton-suivant:disabled,
+.resa__bouton-suivant[aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ============================================================
+   NAVIGATION BAS DE PAGE
+   ============================================================ */
+.resa__navigation-bas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2em;
+  padding-top: 1.6em;
+  border-top: 1px solid #f0ddc8;
+}
+.resa__bouton-precedent {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: 700;
+  color: #6b5743;
+  padding: 0.8em 1.2em;
+  border-radius: 10em;
+  border: 1.5px solid #e7d8c8;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+@media (hover: hover) {
+  .resa__bouton-precedent:hover {
+    border-color: #fcb116;
+    color: #412f20;
+  }
+}
+.resa__bouton-precedent svg {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.resa__progression {
+  display: flex;
+  gap: 0.6em;
+}
+.resa__progression-point {
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  background-color: #e7d8c8;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+.resa__progression-point--actif {
+  background-color: #fcb116;
+  transform: scale(1.3);
+}
+
+@media screen and (max-width: 500px) {
+  .resa__navigation-bas {
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+  .resa__progression {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+}
