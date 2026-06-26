@@ -1334,7 +1334,7 @@ b {
 }
 
 .pied-de-page__logo {
-  width: 12.5em;
+  width: 17.5em;
   height: auto;
 }
 .pied-de-page__logo-image {
@@ -1380,11 +1380,12 @@ b {
    ============================================================ */
 .localisation {
   padding: 6em 0;
-  background-color: #fdf8f3;
+  /* background-color: #48382e26; */
   background-image: url("assets/products/bg_floue.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 1em;
 }
 @media screen and (max-aspect-ratio: 2/3) {
   .localisation {
@@ -1397,7 +1398,7 @@ b {
   align-items: center;
   gap: 4em;
   background-color: #ffffff;
-  border-radius: 2.5em;
+  border-radius:  6.5em;
   box-shadow: 0 0 5em #48382e26;
   padding: 3.5em;
   left: 10%;
@@ -1465,7 +1466,7 @@ b {
 
 .localisation__info p {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 1.5;
   color: #412f20;
 }
@@ -1503,7 +1504,7 @@ b {
   flex: 1.2;
   width: 100%;
   aspect-ratio: 4/3;
-  border-radius: 1.8em;
+  border-radius: 5.8em;
   overflow: hidden;
 }
 @media screen and (max-aspect-ratio: 2/3) {
@@ -1648,3 +1649,437 @@ input[type="submit"] {
   width: 100%;
   height: auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nous-contacter {
+  position: relative;
+  /* background: #1a120a; */
+  /* Remplacez l'url() par le chemin de votre image de fond */
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  padding: 80px 0 60px;
+  color: #fff;
+}
+ 
+/* Overlay sombre pour lisibilité du texte */
+.nous-contacter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* background: rgba(20, 12, 4, 0.78); */
+  /* background-image: url("assets/products/bg_floue.jpg"); */
+
+}
+ 
+.nous-contacter .conteneur {
+  position: relative;
+  z-index: 1;
+}
+ 
+/* Grille 2 colonnes */
+.nous-contacter__grille {
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: 64px;
+  align-items: start;
+}
+ 
+/* Colonne gauche */
+.nous-contacter__infos {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+ 
+.nous-contacter h1 {
+  font-size: 54px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.05;
+}
+ 
+.nous-contacter__adresse {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+}
+ 
+.nous-contacter__adresse b {
+  color: #fff;
+  font-weight: 600;
+}
+ 
+.nous-contacter__tel {
+  font-size: 15px;
+  font-weight: 600;
+  color: #FCB116;
+}
+ 
+/* Bloc équipe */
+.equipe h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+}
+ 
+.equipe__liste {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+ 
+/* Carte membre */
+.equipe__carte {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  padding: 14px 20px 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+ 
+.icone-feuille {
+  flex-shrink: 0;
+}
+ 
+.equipe__personne {
+  flex: 1;
+  min-width: 0;
+}
+ 
+.equipe__nom {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+ 
+.equipe__poste {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 2px;
+}
+ 
+.equipe__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  margin-right: 14px;
+}
+ 
+.equipe__contacts a {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+ 
+.equipe__contacts a:hover {
+  color: #FCB116;
+}
+ 
+/* Icônes réseaux sociaux */
+.equipe__reseaux {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+ 
+.equipe__reseaux a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+ 
+.equipe__reseaux a:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+ 
+.equipe__reseaux svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+ 
+/* Formulaire panneau */
+.panneau-formulaire {
+  background: rgba(26, 18, 8, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 60px;
+  padding: 36px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  backdrop-filter: blur(6px);
+}
+ 
+.panneau-formulaire__entete {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+ 
+.panneau-formulaire__entete p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+ 
+/* Champs */
+.champs-formulaire {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+ 
+.champs-formulaire input,
+.champs-formulaire textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  padding: 14px 20px;
+  font-size: 14px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+ 
+.champs-formulaire textarea {
+  border-radius: 18px;
+  resize: none;
+  height: 130px;
+  line-height: 1.55;
+}
+ 
+.champs-formulaire input::placeholder,
+.champs-formulaire textarea::placeholder {
+  color: rgba(255, 255, 255, 0.32);
+}
+ 
+.champs-formulaire input:focus,
+.champs-formulaire textarea:focus {
+  border-color: rgba(252, 177, 22, 0.55);
+}
+ 
+/* Bouton envoyer */
+.bouton-envoyer {
+  width: 100%;
+  background: #FCB116;
+  color: #1a120a;
+  border: none;
+  border-radius: 50px;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+ 
+.bouton-envoyer:hover {
+  background: #e5a010;
+}
+ 
+
+ 
+ 
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────── */
+ 
+@media (max-width: 960px) {
+ 
+  /* Rayonnement */
+  .rayonnement {
+    margin: 20px;
+  }
+ 
+  .rayonnement__grille {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+ 
+  .rayonnement h1 {
+    font-size: 34px;
+  }
+ 
+  .stat-chiffre__nombre {
+    font-size: 56px;
+  }
+ 
+  /* Contact */
+  .nous-contacter__grille {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+ 
+  .nous-contacter h1 {
+    font-size: 38px;
+  }
+}
+ 
+@media (max-width: 640px) {
+ 
+  /* Rayonnement */
+  .rayonnement {
+    margin: 12px;
+    padding: 40px 0;
+  }
+ 
+  .rayonnement h1 {
+    font-size: 26px;
+  }
+ 
+  .stat-chiffre__nombre {
+    font-size: 48px;
+  }
+ 
+  /* Contact */
+  .nous-contacter h1 {
+    font-size: 28px;
+  }
+ 
+  .equipe__carte {
+    border-radius: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+ 
+  /* Masquer les infos de contact sur mobile (trop serré) */
+  .equipe__contacts {
+    display: none;
+  }
+ 
+  /* Formulaire */
+  .panneau-formulaire {
+    padding: 24px 20px;
+  }
+ 
+  .retour-haut {
+    padding: 20px 20px 10px;
+  }
+}
+
+
+
+
+
+
+
+
+/* Fix débordement des champs */
+.panneau-formulaire {
+  box-sizing: border-box;
+  overflow: hidden; /* sécurité */
+}
+
+.champs-formulaire {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.champs-formulaire input,
+.champs-formulaire textarea {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+
+
+
+
+
+
+
+.pied-de-page__creux {
+  position: relative;
+  line-height: 0;
+  margin-bottom: -2px;
+}
+
+.pied-de-page__creux svg {
+  width: 100%;
+  display: block;
+}
+
+.retour-haut {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.retour-haut:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+
+
+
+
+
+
+
+.bouton--petit {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.2rem 0.2rem 1.4rem;
+  gap: 1rem;
+}
+
+.bouton--petit .bouton__icone {
+  padding: 0.6rem;
+  height: 0.8rem;
+  width: 0.8rem;
+  min-height:1.5rem;
+  min-width: 1.5rem;
+  
+}
+
+
+
+
+
+
+
+
